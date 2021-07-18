@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="users.css" rel="stylesheet"></head>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<body>
+    <div class="wrapper-users">
+        <header class="user-header">
+            <img src="images/logo45.png" alt="logo"/>
+            <button id="Home">Home</button>
+            <button id="reserve">Reservations</button>
+            <button id=order-online>order online</button>
+            <button id="welcome" style="font-weight: bold;"></button>
+            <button id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</button>
+         </header>
+        <section class="user-section" id='user-section' style="padding: 2%; background: #e9ecee;">
+        <div class="user-table-booking" id="user-table-booking" style="background-color: white; margin-top: 9%;">
+            <h1>Book a table</h1>
+            <form type="submit" id="book-form">
+               <input type="date" id="date-today" required>
+                <select id="time" required>
+                <option value="">Time Slot</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                </select>
+                <select id="persons" required>
+                <option value="">No of persons</option>
+                <option value=2>2 Persons</option>
+                <option value=3>3 persons</option>
+                <option value=4>4 persons</option>
+               </select>
+               <input type="number" id='table-no' placeholder="table Number." required>
+               <button id="booking">Book a table</button>
+           </form>
+        </div>
+        <div id='canvas-div'><canvas id="canvas" width="700" height="800"></canvas></div>
+        </section>
+        <div id="myReserve" style="display: none; background-color: #e9ecee; padding-bottom: 20%;">
+                <h1 style="text-align: center;">My Reservations</h1>
+                <h3 style="text-align: center;">Note:You can only cancel upto 10 Minutes after your Reservation</h3>
+                <table id='user-regn'></table>
+        </div>
+        <div class="fabric-table">
+          <div class="form-group admin-menu">
+            <div class="row" style="visibility: hidden;">
+                <div class="col-sm-2 col-sm-offset-3 form-group">
+                    <label>Width (px)</label>
+                    <input type="number" id="width" class="form-control" value="302" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label>Height (px)</label>
+                    <input type="number" id="height" class="form-control" value="812" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label>&nbsp;</label>
+                    <br />
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="rectangle">+ &#9647; Table</button>
+                <!-- <button class="circle">+ &#9711; Table</button>
+                <button class="triangle">+ &#9651; Table</button> -->
+                <button class="chair">+ Chair</button>
+                <!-- <button class="bar">+ Bar</button>
+                <button class="wall">+ Wall</button> -->
+                <button class="remove">Remove</button>
+                <button id="save" class="btn btn-primary">Save</button>
+                <button class="customer-mode" style="visibility: hidden;">Customer mode</button>
+            </div>
+        </div>
+        <div class="form-group customer-menu" style="display: none;">
+          <div class="btn-group">
+            <button class="btn btn-success submit">Submit reservation</button>
+            <button class="btn btn-warning admin-mode">Admin mode</button>
+          </div>
+        </div>
+
+        <footer class="footer" style="padding-left: 10%;">
+            <p>
+            <span>&#169;</span> 2019 RJ private Limited. Venkata Ramana
+            Vanchanagiri
+            </p>
+            <p>Follow Us On</p>
+            <p><i class="fa fa-facebook-square" aria-hidden="true"></i></p>
+            <p><i class="fa fa-instagram" aria-hidden="true"></i></p>
+             <p><i class="fa fa-twitter" aria-hidden="true"></i></p> 
+    </footer>
+  </div>
+<script src="users.bundle.js"></script></body>
+
+</html>

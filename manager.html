@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    <link href="manager.css" rel="stylesheet"></head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+    <body>
+        <div class="wrapper-manager">
+            <header class="manager-header">
+                <img src="images/logo45.png" alt="logo" />
+                <button id="Home"><b>Layout</b></button>
+                <button id="reserve"><b>Bookings</b></button>
+                <button id="welcome" style="font-weight: bold"></button>
+                <button id="logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i><b>Log out</b>
+                </button>
+            </header>
+            <div id="layout" style="margin: 3%;">
+                <div class="form-group admin-menu">
+                    <div class="row" style="visibility: hidden; position: absolute;">
+                        <div class="col-sm-2 col-sm-offset-3 form-group">
+                            <label>Width (px)</label>
+                            <input
+                                type="number"
+                                id="width"
+                                class="form-control"
+                                value="302"
+                            />
+                        </div>
+                        <div class="col-sm-2 form-group">
+                            <label>Height (px)</label>
+                            <input
+                                type="number"
+                                id="height"
+                                class="form-control"
+                                value="812"
+                            />
+                        </div>
+                        <div class="col-sm-2 form-group">
+                            <label>&nbsp;</label>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div id='mgr-form'>
+                    <div class="btn-group">
+                        <h3 style="margin-left: 20%;"> Layout Management</h3>
+                        <button class="rectangle">+ &#9647; Add Table</button><br>
+                        <button class="chair">+ Add Chair</button><br>
+                        <button class="remove">Remove</button><br>
+                        <button id="save" class="btn btn-primary">Save this Layout</button><br>
+                        <button
+                            class="customer-mode"
+                            style="visibility: hidden"
+                        >
+                            Customer mode
+                        </button>
+                    </div>
+                    <canvas id="canvas" width="302" height="812"></canvas>
+                </div>
+            </div>
+            <div id='reserve12' style="width: fit-content; margin-left: 30%; display: none;" >
+                <h2 style="text-align: center;">Total Reservations</h2>
+                <table id="reservations"></table>
+            </div>
+        </div>
+            <footer class="footer" style="padding-left: 10%;">
+                <p>
+                <span>&#169;</span> 2019 RJ private Limited. Venkata Ramana
+                Vanchanagiri
+                </p>
+                <p>Follow Us On</p>
+                <p><i class="fa fa-facebook-square" aria-hidden="true"></i></p>
+                <p><i class="fa fa-instagram" aria-hidden="true"></i></p>
+                <p><i class="fa fa-instagram" aria-hidden="true"></i></p>
+
+        </footer>
+    <script src="fabrictable.bundle.js"></script><script src="manager.bundle.js"></script></body>
+</html>

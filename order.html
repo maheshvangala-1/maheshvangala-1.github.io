@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    <link href="order.css" rel="stylesheet"></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+    <body>
+        <div class="order-online">
+            <header class="order-header" id='order-header'>
+                <img src="images/logo45.png" alt="logo"/>
+                <a id='hamburger' class="icon" style="display: none;"><i class="fa fa-bars"></i></a>
+                <button id="Home">Home</button>
+                <button id="reserve">Reservations</button>
+                <button id="welcome" style="font-weight: bold;"></button>
+                <button id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</button>
+            </header>
+            <section id="menu">
+              <div id="menu1">
+                  <h2 style="text-align: center;">Main Menu</h2>
+                  <p>Starters</p>
+                  <p>Main Course</p>
+                  <p>Desserts</p>
+              </div>
+              <div id="menu2"></div>
+              <div id="menu5"> <button id="cart-btn"><span id='ord-cnt' class="p1 fa-stack fa-2x has-badge" data-count="3">
+                <i class="p2 fa fa-circle fa-stack-2x"></i>
+                <i class="p3 fa fa-shopping-cart fa-stack-1x fa-inverse" data-count="5"></i>
+              </span></button></div>
+              <div id="cart-modal">
+                  <div></div>
+                   <div id='cart-content'>
+                        <h1 style="margin-right:7%;">CART<a id='cancel' style="float: right;">X</a></h1>
+                        <table id="disp-items"></table>
+                        <h3>Sub Total:<a id='total'></a></h3>
+                        <button id='checkout'>Check Out --></button>
+                   </div>
+                   <div></div>
+              </div>
+            </section>
+            <footer class="footer" style="padding-left: 10%;">
+                <p>
+                <span>&#169;</span> 2019 RJ private Limited. Venkata Ramana
+                Vanchanagiri
+                </p>
+                <p>Follow Us On</p>
+                <p><i class="fa fa-facebook-square" aria-hidden="true"></i></p>
+                <p><i class="fa fa-instagram" aria-hidden="true"></i></p>
+                <p><i class="fa fa-instagram" aria-hidden="true"></i></p>
+
+        </footer>
+        </div>
+
+    <script src="order.bundle.js"></script></body>
+</html>
