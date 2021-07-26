@@ -24,6 +24,7 @@ button {
   align-items: center;
   grid-template-columns: 40% 10% 10% 10% 10%;
 }
+
 .wrapper__header img {
   height: 100px;
   width: 100px;
@@ -144,6 +145,12 @@ button {
   transition: 2s;
   width: 20%;
   float: left;
+}
+#dlink
+{
+  text-decoration: none;
+  position: absolute;
+  margin-left: 500px;
 }
 
 [class*=det] {
