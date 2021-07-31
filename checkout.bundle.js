@@ -154,10 +154,14 @@ document.querySelectorAll(".remove-btn").forEach(function (element) {
     }
   });
 });
-document.getElementById('order-place').addEventListener('click', function () {
+document.getElementById('order-place').onclick=function () {
   console.log(mark);
-  console.log("HIII");
 
+  
+  digitalData.products.productEvent="purchase"
+  
+
+console.log(digitalData)
   if (typeof mark === 'undefined') {
     alert('select any address');
   } else {
@@ -175,14 +179,8 @@ document.getElementById('order-place').addEventListener('click', function () {
       });
     
   }
-});
-
-window.onload=function(e)
-{
-  let billdiv=document.getElementById("disp-items")
-
-
 }
+
 
 
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {

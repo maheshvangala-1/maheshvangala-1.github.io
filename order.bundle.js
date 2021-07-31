@@ -154,6 +154,7 @@ window.onload=function(e){
       let p1=menudivs[i].children[2].children
       p1[0].onclick=function(e)
       {
+        digitalData.products.productEvent="cart-add"
         digitalData.products.cartadd=menudivs[i].children[1].innerHTML
         console.log(digitalData)
         
@@ -162,6 +163,7 @@ window.onload=function(e){
       {
         img1.onclick=function(e)
         {
+          digitalData.products.productEvent="prod-view"
           digitalData.products.prodview=menudivs[i].children[1].innerHTML
           console.log(digitalData)
         }
@@ -296,6 +298,7 @@ function displayCart() {
   var cartArray = listCart();
   var output = "";
   digitalData.products.cartview=[]
+  digitalData.products.productEvent="cart-view"
   //console.log("HII",cartArray)
   for (var i in cartArray) {
     digitalData.products.cartview.push(cartArray[i].name)
@@ -361,6 +364,7 @@ if (document.getElementById("cancel")) {
 if (document.getElementById("checkout")) {
   document.getElementById("checkout").onclick = function () {
     window.location.href = "./checkout.html";
+    digitalData.products.productEvent="checkout"
   };
 }
 
