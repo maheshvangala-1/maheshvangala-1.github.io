@@ -46,13 +46,16 @@ button:hover{
   background: transparent;
   font-weight: bold;
 }
-
+.food-item
+{
+  cursor: grabbing;
+}
 #menu {
   margin-top: 3%;
   display: grid;
   grid-template-areas: "menu menu header header header cart cart" "menu menu header header header cart cart" "menu menu header header header cart cart";
 }
-#menu #food-menu {
+#menu .food-item {
   background: white;
   width: 78%;
   margin-bottom: 10%;
@@ -60,12 +63,12 @@ button:hover{
   padding: 2%;
   box-shadow: 5px 10px 18px #817f7fd3;
 }
-#menu #food-menu #menu-img {
+#menu .food-item #menu-img {
   padding: 5%;
   width: 200px;
   height: 150px;
 }
-#menu #food-menu button {
+#menu .food-item button {
   float: right;
   /* height: 18px; */
   margin-top: -5px;
@@ -183,7 +186,7 @@ button:hover{
     display: grid;
     grid-template-areas: "cart cart cart" "menu menu menu" "menu menu menu" "menu menu menu" "header header header" "header header header" "header header header";
   }
-  #menu2 #food-menu {
+  #menu2 .food-item {
     background: white;
     margin-top: 2%;
     width: 78%;
@@ -193,12 +196,12 @@ button:hover{
     padding: 2%;
     box-shadow: 5px 10px 18px #817f7fd3;
   }
-  #menu2 #food-menu #menu-img {
+  #menu2 .food-item #menu-img {
     padding: 5%;
     max-width: 90%;
     height: 150px;
   }
-  #menu2 #food-menu button {
+  #menu2 .food-item button {
     float: right;
     /* height: 18px; */
     margin-top: -5px;

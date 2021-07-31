@@ -177,6 +177,14 @@ document.getElementById('order-place').addEventListener('click', function () {
   }
 });
 
+window.onload=function(e)
+{
+  let billdiv=document.getElementById("disp-items")
+
+
+}
+
+
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 
   var R = 6371; // Radius of the earth in km
@@ -442,8 +450,16 @@ function addCart(button) {
 function displayCart() {
   var cartArray = listCart();
   var output = "";
-
+  digitalData.products=[]
   for (var i in cartArray) {
+    let obj1={}
+    obj1.name=cartArray[i].name;
+    obj1.qty=cartArray[i].count;
+    obj1.cost=cartArray[i].total;
+    obj1.tax=30
+    digitalData.products.push(obj1)
+
+
     output += "<tr>" + "<td>" + cartArray[i].name + "</td>" + "<td><div id='variant'><button id=minus name=" + i + ">-</button>" + "<span id=a" + i + " class='inputs'>" + cartArray[i].count + "</span>" + "<button  id='plus' name=" + i + " >+</button></div></td>" + "<td>" + " &#8377 " + cartArray[i].total + "</td>" + "</tr>";
   }
 
@@ -487,6 +503,7 @@ function displayCart() {
     });
   });
 }
+console.log(digitalData)
 
 if (document.getElementById("cart-btn")) {
   document.getElementById("cart-btn").onclick = function () {

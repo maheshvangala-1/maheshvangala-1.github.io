@@ -25,67 +25,82 @@ var vegMenu = [{
   id: 1,
   type: "starter",
   name: "Veg Manchurian",
-  image: "../public/images/starter1.jpg",
+  image: "./public/images/starter1.jpg",
   cost: 199,
   quantity: 1
 }, {
   id: 2,
   type: "starter",
   name: "Paneer Tikka",
-  image: "../public/images/starter2.jfif",
+  image: "./public/images/starter2.jfif",
   cost: 255,
   quantity: 1
 }, {
   id: 3,
   type: "starter",
   name: "Crispy Corn",
-  image: "../public/images/starter3.jpg",
+  image: "./public/images/starter3.jpg",
   cost: 199,
   quantity: 1
 }, {
   id: 4,
   type: "maincourse",
   name: "Chicken Biryani",
-  image: "../public/images/maincourse1.jfif",
+  image: "./public/images/maincourse1.jfif",
   cost: 240,
   quantity: 1
 }, {
   id: 5,
   type: "maincourse",
   name: "Paneer Biryani",
-  image: "../public/images/maincourse2.jpg",
+  image: "./public/images/maincourse2.jpg",
   cost: 225,
   quantity: 1
 }, {
   id: 6,
   type: "maincourse",
   name: "Veg Pulao",
-  image: "../public/images/maincourse3.jfif",
+  image: "./public/images/maincourse3.jfif",
   cost: 240,
   quantity: 1
 }, {
   id: 7,
   type: "dessert",
   name: "Ice cream",
-  image: "../public/images/dessert1.jfif",
+  image: "./public/images/dessert1.jfif",
   cost: 240,
   quantity: 1
 }, {
   id: 8,
   type: "dessert",
   name: "Gulab Jamun",
-  image: "../public/images/dessert2.jfif",
+  image:"./public/images/dessert2.jfif",
+  //image: "../public/images/dessert2.jfif",
   cost: 240,
   quantity: 1
 }, {
   id: 9,
   type: "dessert",
   name: "Rasmalai",
-  image: "../public/images/dessert3.jfif",
+  image: "./public/images/dessert3.jfif",
   cost: 240,
   quantity: 1
 }];
 
+//console.log(digitalData)
+// let fitems=document.getElementsByClassName("food-item")
+// if(fitems)
+// {
+// let l=fitems.length
+// alert(l)
+// for(let i=0;i<l;i++)
+// {
+//   fitems[i].onclick=function(e){
+//     let p=fitems[i].children[1].innerText;
+//     alert(p)
+//   }
+// }
+// }
 if (document.getElementById("welcome")) {
   var loginName = localStorage.getItem("username45");
   document.getElementById("welcome").innerHTML = "<i class=\"fa fa-user\" aria-hidden=\"true\"></i> " + loginName;
@@ -95,8 +110,8 @@ if (document.getElementById("menu")) {
   for (var i = 0; i < vegMenu.length; i++) {
     if (vegMenu[i].type = "starter") {
       var div = document.createElement("div");
-      div.id = "food-menu";
-      div.class="food-item"
+      //div.id = "food-menu";
+      div.className="food-item"
       var image = document.createElement("img");
       image.src = vegMenu[i].image; // image.height="200px";
       // image.width="200px";
@@ -109,6 +124,7 @@ if (document.getElementById("menu")) {
       var button = document.createElement("button");
       button.id = vegMenu[i].id;
       button.addEventListener("click", function () {
+        
         addCart(this);
       });
       button.innerHTML = "Add to cart";
@@ -116,12 +132,43 @@ if (document.getElementById("menu")) {
       div.appendChild(name);
       cost.appendChild(button);
       div.appendChild(cost);
+      // image.onclick=function(e){
+      //   alert(name.innerHTML)
+      // }
       document.getElementById("menu2").appendChild(div);
     }
   }
 }
 
 var cart = [];
+
+window.onload=function(e){
+  let menudivs=document.getElementsByClassName("food-item")
+  if(menudivs)
+  {
+    let l=menudivs.length
+    for(let i=0;i<l;i++)
+    {
+      let img1=menudivs[i].children[0]
+
+      let p1=menudivs[i].children[2].children
+      p1[0].onclick=function(e)
+      {
+        digitalData.products.cartadd=menudivs[i].children[1].innerHTML
+        console.log(digitalData)
+        
+      }
+      if(img1)
+      {
+        img1.onclick=function(e)
+        {
+          digitalData.products.prodview=menudivs[i].children[1].innerHTML
+          console.log(digitalData)
+        }
+      }
+    }
+  }
+}
 
 function Item(name, price, count) {
   this.name = name;
@@ -248,10 +295,14 @@ function addCart(button) {
 function displayCart() {
   var cartArray = listCart();
   var output = "";
-
+  digitalData.products.cartview=[]
+  //console.log("HII",cartArray)
   for (var i in cartArray) {
+    digitalData.products.cartview.push(cartArray[i].name)
+
     output += "<tr>" + "<td>" + cartArray[i].name + "</td>" + "<td><div id='variant'><button id=minus name=" + i + ">-</button>" + "<span id=a" + i + " class='inputs'>" + cartArray[i].count + "</span>" + "<button  id='plus' name=" + i + " >+</button></div></td>" + "<td>" + " &#8377 " + cartArray[i].total + "</td>" + "</tr>";
   }
+  console.log(digitalData)
 
   if (document.getElementById("ord-cnt")) document.getElementById("ord-cnt").dataset.count = totalCount();
   document.getElementById("disp-items").innerHTML = output;
@@ -297,6 +348,7 @@ function displayCart() {
 if (document.getElementById("cart-btn")) {
   document.getElementById("cart-btn").onclick = function () {
     document.getElementById("cart-modal").style.visibility = "visible";
+
   };
 }
 
