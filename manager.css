@@ -6,6 +6,7 @@ body {
 
 button {
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 .manager-header {

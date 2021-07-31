@@ -8,6 +8,7 @@ html, body {
 
 button {
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 body {

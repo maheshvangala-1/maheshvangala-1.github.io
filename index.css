@@ -10,6 +10,11 @@ html, body {
 
 button {
   font-family: "Poppins", sans-serif;
+  
+
+}
+button:hover{
+  cursor: pointer;
 }
 
 .wrapper {

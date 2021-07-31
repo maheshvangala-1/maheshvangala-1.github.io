@@ -10,6 +10,9 @@ body {
 button {
   font-family: "Poppins", sans-serif;
 }
+button:hover{
+  cursor: pointer;
+}
 
 .footer {
   background: #696464;
