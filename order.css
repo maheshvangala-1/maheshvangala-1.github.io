@@ -57,7 +57,7 @@ button:hover{
   width: 78%;
   margin-bottom: 10%;
   height: fit-content;
-  cursor: pointer;
+  cursor: grabbing;
   padding: 2%;
   box-shadow: 5px 10px 18px #817f7fd3;
 }
