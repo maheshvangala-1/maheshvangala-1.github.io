@@ -96,6 +96,7 @@ if (document.getElementById("menu")) {
     if (vegMenu[i].type = "starter") {
       var div = document.createElement("div");
       div.id = "food-menu";
+      div.class="food-item"
       var image = document.createElement("img");
       image.src = vegMenu[i].image; // image.height="200px";
       // image.width="200px";
