@@ -161,7 +161,7 @@ document.getElementById('order-place').addEventListener('click', function () {
   if (typeof mark === 'undefined') {
     alert('select any address');
   } else {
-    if (confirm("Do yo want to place order.?")) {
+    
       document.getElementById("map").style.display = "block";
       var address = JSON.parse(localStorage.getItem("address"));
       var viewadd = address[mark];
@@ -173,7 +173,7 @@ document.getElementById('order-place').addEventListener('click', function () {
       document.getElementById('map').scrollIntoView({
         behavior: "smooth"
       });
-    }
+    
   }
 });
 
