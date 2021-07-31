@@ -298,7 +298,6 @@ function displayCart() {
   var cartArray = listCart();
   var output = "";
   digitalData.products.cartview=[]
-  digitalData.products.productEvent="cart-view"
   //console.log("HII",cartArray)
   for (var i in cartArray) {
     digitalData.products.cartview.push(cartArray[i].name)
@@ -351,6 +350,7 @@ function displayCart() {
 if (document.getElementById("cart-btn")) {
   document.getElementById("cart-btn").onclick = function () {
     document.getElementById("cart-modal").style.visibility = "visible";
+    digitalData.products.productEvent="cart-view"
 
   };
 }
