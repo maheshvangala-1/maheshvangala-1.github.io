@@ -137,6 +137,7 @@ if (document.getElementById("menu")) {
         let fname=e.target.nextElementSibling.innerHTML
   
         digitalData.products.prodview=fname
+        s.tl()
         
         console.log(digitalData)
       }
