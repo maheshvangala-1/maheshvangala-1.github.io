@@ -455,7 +455,7 @@ function displayCart() {
     obj1.qty=cartArray[i].count;
     obj1.cost=cartArray[i].total;
     obj1.tax=30
-    digitalData.products.push(obj1)
+    digitalData.products.cart_products.push(obj1)
 
 
     output += "<tr>" + "<td>" + cartArray[i].name + "</td>" + "<td><div id='variant'><button id=minus name=" + i + ">-</button>" + "<span id=a" + i + " class='inputs'>" + cartArray[i].count + "</span>" + "<button  id='plus' name=" + i + " >+</button></div></td>" + "<td>" + " &#8377 " + cartArray[i].total + "</td>" + "</tr>";
