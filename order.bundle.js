@@ -137,17 +137,14 @@ if (document.getElementById("menu")) {
         let fname=e.target.nextElementSibling.innerHTML
   
         digitalData.products.prodview=fname
-        setTimeout(exec,2000)
+        
         console.log(digitalData)
       }
       document.getElementById("menu2").appendChild(div);
     }
   }
 }
-function exec()
-{
-  
-}
+
 
 var cart = [];
 
