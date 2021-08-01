@@ -121,6 +121,7 @@ if (document.getElementById("menu")) {
       var cost = document.createElement("P");
       cost.innerHTML = "&#8377 " + vegMenu[i].cost;
       image.id = "menu-img";
+      image.className="food-img"
       var button = document.createElement("button");
       button.id = vegMenu[i].id;
       button.addEventListener("click", function () {
@@ -132,9 +133,12 @@ if (document.getElementById("menu")) {
       div.appendChild(name);
       cost.appendChild(button);
       div.appendChild(cost);
-      // image.onclick=function(e){
-      //   alert(name.innerHTML)
-      // }
+      image.onclick=function(e){
+        let fname=e.target.nextElementSibling.innerHTML
+  
+        digitalData.products.prodview=fname
+        console.log(digitalData)
+      }
       document.getElementById("menu2").appendChild(div);
     }
   }
@@ -142,35 +146,46 @@ if (document.getElementById("menu")) {
 
 var cart = [];
 
-window.onload=function(e){
-  let menudivs=document.getElementsByClassName("food-item")
-  if(menudivs)
-  {
-    let l=menudivs.length
-    for(let i=0;i<l;i++)
-    {
-      let img1=menudivs[i].children[0]
+// document.onclick=function(e)
+// {
+//   if(e.target.className=="food-img")
+//   {
+    
+//     let fname=e.target.nextElementSibling.innerHTML
+//     console.log(fname)
+//     digitalData.products.prodview=fname
+//     console.log(digitalData)
+//   }
+// }
 
-      let p1=menudivs[i].children[2].children
-      p1[0].onclick=function(e)
-      {
-        digitalData.products.productEvent="cart-add"
-        digitalData.products.cartadd=menudivs[i].children[1].innerHTML
-        console.log(digitalData)
+  // let menudivs=document.getElementsByClassName("food-item")
+  // if(menudivs)
+  // {
+  //   let l=menudivs.length
+  //   for(let i=0;i<l;i++)
+  //   {
+  //     let img1=menudivs[i].children[0]
+
+  //     let p1=menudivs[i].children[2].children
+  //     p1[0].onclick=function(e)
+  //     {
+  //       digitalData.products.productEvent="cart-add"
+  //       digitalData.products.cartadd=menudivs[i].children[1].innerHTML
+  //       console.log(digitalData)
         
-      }
-      if(img1)
-      {
-        img1.onclick=function(e)
-        {
-          digitalData.products.productEvent="prod-view"
-          digitalData.products.prodview=menudivs[i].children[1].innerHTML
-          console.log(digitalData)
-        }
-      }
-    }
-  }
-}
+  //     }
+  //     if(img1)
+  //     {
+  //       img1.onclick=function(e)
+  //       {
+  //         digitalData.products.productEvent="prod-view"
+  //         digitalData.products.prodview=menudivs[i].children[1].innerHTML
+  //         console.log(digitalData)
+  //       }
+  //     }
+  //   }
+  // }
+
 
 function Item(name, price, count) {
   this.name = name;
