@@ -202,6 +202,8 @@ if (sessionStorage.getItem("shoppingCart") != null) {
 }
 
 function addItemToCart(name, price, count) {
+  digitalData.products.cartadd=name
+  _satellite.track("Cart-Add")
   for (var item in cart) {
     if (cart[item].name === name) {
       cart[item].count++;
