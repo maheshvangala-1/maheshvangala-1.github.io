@@ -139,7 +139,7 @@ if (document.getElementById("menu")) {
         digitalData.products.prodview=fname
         
         
-        console.log(digitalData)
+        console.log("HIIII MAHESH",digitalData.products.prodview)
       }
       document.getElementById("menu2").appendChild(div);
     }
