@@ -133,14 +133,7 @@ if (document.getElementById("menu")) {
       div.appendChild(name);
       cost.appendChild(button);
       div.appendChild(cost);
-      image.onclick=function(e){
-        let fname=e.target.nextElementSibling.innerHTML
-  
-        digitalData.products.prodview=fname
-        
-        
-        console.log("HIIII MAHESH",digitalData.products.prodview)
-      }
+      
       document.getElementById("menu2").appendChild(div);
     }
   }
@@ -411,6 +404,23 @@ if (document.getElementById("logout")) {
       window.location.href = "./index.html";
     })["catch"](function (error) {});
   };
+}
+
+if(document.getElementsByClassName("food-img")){
+  let l=document.getElementsByClassName("food-img").length
+  
+  let p=document.getElementsByClassName("food-img")
+  for(let i=0;i<l;i++)
+  {
+    p[i].onclick=function(){
+      let p11=this.nextElementSibling.innerHTML
+
+      digitalData.products.prodview=p11
+      console.log("DHONI",digitalData.products.prodview)
+      
+
+    }
+  }
 }
 
 /***/ }),
