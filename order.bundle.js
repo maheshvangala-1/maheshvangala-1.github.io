@@ -365,6 +365,8 @@ if (document.getElementById("cart-btn")) {
     document.getElementById("cart-modal").style.visibility = "visible";
     digitalData.products.productEvent="cart-view"
 
+
+
   };
 }
 
@@ -416,7 +418,9 @@ if(document.getElementsByClassName("food-img")){
       let p11=this.nextElementSibling.innerHTML
 
       digitalData.products.prodview=p11
-      console.log("DHONI",digitalData.products.prodview)
+
+      _satellite.track("Product-View")
+      // console.log("DHONI",digitalData.products.prodview)
       
 
     }
