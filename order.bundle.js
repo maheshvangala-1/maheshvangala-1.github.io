@@ -219,7 +219,9 @@ function addItemToCart(name, price, count) {
   }
 
   var item = new Item(name, price, count);
+  
   cart.push(item);
+  console.log(cart)
   saveCart();
   displayCart();
 }
@@ -315,10 +317,10 @@ function addCart(button) {
 function displayCart() {
   var cartArray = listCart();
   var output = "";
-  digitalData.products.cartview=[]
+  // digitalData.products.cartview=[]
   //console.log("HII",cartArray)
   for (var i in cartArray) {
-    digitalData.products.cartview.push(cartArray[i].name)
+    // digitalData.products.cartview.push(cartArray[i].name)
 
     output += "<tr>" + "<td>" + cartArray[i].name + "</td>" + "<td><div id='variant'><button id=minus name=" + i + ">-</button>" + "<span id=a" + i + " class='inputs'>" + cartArray[i].count + "</span>" + "<button  id='plus' name=" + i + " >+</button></div></td>" + "<td>" + " &#8377 " + cartArray[i].total + "</td>" + "</tr>";
   }
@@ -382,7 +384,7 @@ if (document.getElementById("cancel")) {
 if (document.getElementById("checkout")) {
   document.getElementById("checkout").onclick = function () {
     window.location.href = "./checkout.html";
-    digitalData.products.productEvent="checkout"
+    // digitalData.products.productEvent="checkout"
   };
 }
 

@@ -146,7 +146,9 @@ if (document.getElementById("locateus")) {
 }
 
 if (document.getElementById('aboutus')) {
+  
   document.getElementById('aboutus').onclick = function () {
+    
     window.location.href = "./aboutus.html";
   };
 }
