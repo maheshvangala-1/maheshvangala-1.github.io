@@ -207,6 +207,8 @@ function addItemToCart(name, price, count) {
   
   if(cart.length==0)
   {
+
+    digitalData.products.cartOpen=name;
     _satellite.track("Cart-Open")
   }
   for (var item in cart) {
