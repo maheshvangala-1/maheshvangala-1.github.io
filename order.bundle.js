@@ -311,6 +311,8 @@ function addCart(button) {
 
 function displayCart() {
   var cartArray = listCart();
+
+  console.log("HIIIIII ",cartArray)
   var output = "";
   // digitalData.products.cartview=[]
   //console.log("HII",cartArray)
@@ -365,6 +367,24 @@ function displayCart() {
 if (document.getElementById("cart-btn")) {
   document.getElementById("cart-btn").onclick = function () {
     document.getElementById("cart-modal").style.visibility = "visible";
+   
+
+    let tab1=document.getElementById("disp-items").children[0].children
+    
+    console.log(tab1)
+    let arr=[]
+    
+    for(let i=0;i<tab1.length;i++)
+    {
+      let p11=tab1[i].children[0].innerHTML
+      
+      arr.push(p11) 
+    }
+    console.log(arr)
+    digitalData.products.cartview=arr;
+    
+    _satellite.track("Cart-View")
+
     digitalData.products.productEvent="cart-view"
 
 
