@@ -165,6 +165,20 @@
         document.getElementById("map").style.display = "block";
         var address = JSON.parse(localStorage.getItem("address"));
         var viewadd = address[mark];
+        digitalData.products.cart_products=[]
+        digitalData.products.cart_count=[]
+        digitalData.products.cart_cost=[]
+        var cartArray = listCart();
+        for (var i in cartArray) {
+          digitalData.products.cart_products.push(cartArray[i].name)
+          digitalData.products.cart_count.push(cartArray[i].count)
+          digitalData.products.cart_cost.push(cartArray[i].cost)
+    
+    
+        }
+      
+
+
         setTimeout(function () {
           loadMap("hyderabad", viewadd.latLong);
         }, 400);
