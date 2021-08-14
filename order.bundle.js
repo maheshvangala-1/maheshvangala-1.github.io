@@ -242,6 +242,7 @@ function removeItemFromCart(name) {
   for (var item in cart) {
     if (cart[item].name === name) {
       cart[item].count--;
+      digitalData.products.cartRemove=cart[item].name
       _satellite.track("Cart-Remove")
 
       if (cart[item].count === 0) {
