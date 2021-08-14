@@ -364,7 +364,6 @@
     for (var item in cart) {
       if (cart[item].name === name) {
         cart[item].count--;
-        
       digitalData.products.cartRemove=cart[item].name
       _satellite.track("Cart-Remove")
   
@@ -445,9 +444,12 @@
   function displayCart() {
     var cartArray = listCart();
     var output = "";
-  
+    digitalData.products.cart_products=[]
     for (var i in cartArray) {
       output += "<tr>" + "<td>" + cartArray[i].name + "</td>" + "<td><div id='variant'><button id=minus name=" + i + ">-</button>" + "<span id=a" + i + " class='inputs'>" + cartArray[i].count + "</span>" + "<button  id='plus' name=" + i + " >+</button></div></td>" + "<td>" + " &#8377 " + cartArray[i].total + "</td>" + "</tr>";
+      digitalData.products.cart_products.push(cartArray[i].name)
+
+
     }
   
     if (document.getElementById("ord-cnt")) document.getElementById("ord-cnt").dataset.count = totalCount();
