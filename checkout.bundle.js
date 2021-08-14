@@ -336,6 +336,8 @@
   function addItemToCart(name, price, count) {
     for (var item in cart) {
       if (cart[item].name === name) {
+        digitalData.products.cartadd=name
+        _satellite.track("Cart-Add")
         cart[item].count++;
         saveCart();
         displayCart();
@@ -362,6 +364,9 @@
     for (var item in cart) {
       if (cart[item].name === name) {
         cart[item].count--;
+        
+      digitalData.products.cartRemove=cart[item].name
+      _satellite.track("Cart-Remove")
   
         if (cart[item].count === 0) {
           cart.splice(item, 1);
