@@ -154,42 +154,67 @@
       }
     });
   });
-  document.getElementById('order-place').addEventListener('click', function () {
-    console.log(mark);
-    console.log("HIII");
+  let order_place1=document.getElementById("order-place")
   
-    if (typeof mark === 'undefined') {
-      alert('select any address');
-    } else {
-      if (confirm("Do yo want to place order.?")) {
-        document.getElementById("map").style.display = "block";
-        var address = JSON.parse(localStorage.getItem("address"));
-        var viewadd = address[mark];
-        digitalData.products.cart_products=[]
-        digitalData.products.cart_count=[]
-        digitalData.products.cart_cost=[]
-        var cartArray = listCart();
-        for (var i in cartArray) {
-          digitalData.products.cart_products.push(cartArray[i].name)
-          digitalData.products.cart_count.push(cartArray[i].count)
-          digitalData.products.cart_cost.push(cartArray[i].cost)
+  if(order_place1)
+  {
+    order_place1.onclick=function(){
+      console.log(mark);
+      console.log("HIII");
     
-    
-        }
-        _satellite.track("Cart Purchase")
+      if (typeof mark === 'undefined') {
+        alert('select any address');
+      } else {
+        if (confirm("Do yo want to place order.?")) {
+          document.getElementById("map").style.display = "block";
+          var address = JSON.parse(localStorage.getItem("address"));
+          var viewadd = address[mark];
+          digitalData.products.cart_products=[]
+          digitalData.products.cart_count=[]
+          digitalData.products.cart_cost=[]
+          var cartArray1 =[]
+          var ele=document.getElementById("disp-items")
+          var elerows=ele.children[0].children
+          var l=elerows.length
+          console.log(elerows)
+          for(var i=0;i<l;i++)
+          {
+            var obj1={}
+            
+            obj1.name=elerows[i].children[0].innerHTML
+            obj1.count=elerows[i].children[1].children[0].children[1].innerHTML
+            obj1.cost=elerows[i].children[2].innerHTML.substring(3)
+            cartArray1.push(obj1)
+          }
+          
+          for (var i in cartArray1) {
+           // console.log("HELLO",obj1)
+            digitalData.products.cart_products.push(cartArray1[i].name)
+            digitalData.products.cart_count.push(cartArray1[i].count)
+            digitalData.products.cart_cost.push(cartArray1[i].cost)
       
-
-
-        setTimeout(function () {
-          loadMap("hyderabad", viewadd.latLong);
-        }, 400);
-        alert("order has been placed");
-        document.getElementById('map').scrollIntoView({
-          behavior: "smooth"
-        });
+      
+          }
+        
+          _satellite.track("Cart Purchase")
+          
+        
+  
+  
+          setTimeout(function () {
+            loadMap("hyderabad", viewadd.latLong);
+          }, 400);
+          alert("order has been placed");
+          document.getElementById('map').scrollIntoView({
+            behavior: "smooth"
+          });
+        }
       }
     }
-  });
+  }
+  // document.getElementById('order-place').onclick=function () {
+  
+  // }
   
   function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
     var R = 6371; // Radius of the earth in km
@@ -430,8 +455,8 @@
   }
   
   function listCart() {
-    var cartCopy = [];
-  
+   
+    var cartCopy = []; 
     for (i in cart) {
       var item = cart[i];
       var itemCopy = {};
