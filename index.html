@@ -33,9 +33,29 @@
             href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
     <!-- <script src=""></script> -->
     <body>
-      
+       <!-- Modal -->
+  <div  id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h4 class="modal-title">Accept Cookies</h4>
+          <i class="fa fa-close" id="closeModal" style="font-size:30px"></i>
+        </div>
+        <div class="modal-body">
+            <a href="#" id="accCookies">
+                <h3>Click here to accept all Cookies</h3>
+            </a>
+        </div>
+        </div>
+        </div>
+  </div>
          <div class="wrapper">
             <header class="wrapper__header" id='wrapheader'>
                     <img src="images/logo45.png" alt="logo"/>
@@ -192,4 +212,29 @@
     Click to Download Job Portal
     </a>
     <!-- <script src="/dist/index.bundle.js"></script> -->
+    <script>
+           
+           let accCookies=document.getElementById("accCookies");
+            if(accCookies)
+            {
+                accCookies.onclick=function(){
+                    
+                   let myModal=document.querySelector(".modal-content")
+                   myModal.style.display="none";
+                }
+            }
+
+           let closemodal=document.getElementById("closeModal");
+            
+
+
+           if(closemodal)
+           {
+               closemodal.onclick=function(){
+                   
+                   let myModal=document.querySelector(".modal-content")
+                   myModal.style.display="none";
+               }
+           }
+    </script>
 </html>
