@@ -20,6 +20,12 @@ html, body {
   color: red;
 }
 
+#myModal
+{
+  width: 20px;
+  margin-left: 350px;
+}
+
 
 .modal-title
 {

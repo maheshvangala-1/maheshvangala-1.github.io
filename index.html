@@ -42,7 +42,7 @@
   <div  id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
-      <div class="modal-content">
+      <div class="modal-content" style="display: block;">
         <div class="modal-header">
           
           <h4 class="modal-title">Accept Cookies</h4>
@@ -227,7 +227,6 @@
            let closemodal=document.getElementById("closeModal");
             
 
-
            if(closemodal)
            {
                closemodal.onclick=function(){
@@ -235,6 +234,21 @@
                    let myModal=document.querySelector(".modal-content")
                    myModal.style.display="none";
                }
+
+               
+            document.onclick=function(e)
+            {
+                console.log(e.target);
+                
+                let p=e.target.className;
+                console.log(typeof(p));
+                if(p.includes("modal")==false)
+                {
+                        
+                   let myModal=document.querySelector(".modal-content")
+                   myModal.style.display="none";
+                }
+            }
            }
     </script>
 </html>
