@@ -115,6 +115,16 @@ function loginForm(e) {
   var password = document.getElementById("pwd").value;
   firebase.auth().signInWithEmailAndPassword(email, password).then(function (userCredential) {
     var uid = userCredential.user.uid;
+    var datalayerobjs=window.dataLayer;
+    for(let obj in datalayerobjs)
+    {
+      if(obj.event==="userData")
+      {
+        obj.login_status="logged In";
+        break;
+      }
+    }
+
     console.log(uid);
     localStorage.setItem("usercredential", JSON.stringify(userCredential));
     firebase.database().ref("Registration-Data/" + uid).on("value", function (snapshot) {

@@ -17,21 +17,25 @@
 <!-- 
     <script src="https://assets.adobedtm.com/224be2da76aa/f213f9ccedde/launch-ee89ec40e101-development.min.js" async></script> -->
 <script>
-// window.dataLayer=window.dataLayer || []
-// dataLayer.push()
+window.dataLayer=window.dataLayer || []
+window.dataLayer.push({
+    'event' : 'userData',
+    'login_status' : 'not logged in',
+    'userID' : "123456"
+})
 
-
+</script>
+<!-- 
     //ADOBE
-        var digitalData={
-            page:{
-                pageInfo:{
-                    pageName:document.title,
-                    hostName:window.location.hostname
-                }
-            }
-        }
-    </script>
-
+    //     var digitalData={
+    //         page:{
+    //             pageInfo:{
+    //                 pageName:document.title,
+    //                 hostName:window.location.hostname
+    //             }
+    //         }
+    //     }
+    //  -->
  
 </head>
     <link
