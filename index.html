@@ -19,9 +19,16 @@
 <script>
 window.dataLayer=window.dataLayer || []
 window.dataLayer.push({
-    'event' : 'userData',
-    'login_status' : 'not logged in',
-    'userID' : "123456"
+    page:{
+        pageInfo:{
+            pageName:document.title,
+            pageURL: document.URL,
+            deviceType:"Desktop",
+            hostname:window.location.hostname
+
+        }
+    }
+
 })
 
 </script>
