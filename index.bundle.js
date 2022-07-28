@@ -40,8 +40,69 @@ function errdata(err) {
   console.log(err);
 }
 
+if(document.getElementById("accCookies"))
+{
+  document.getElementById("accCookies").onclick = function log() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "Cookies",
+      eventAct:"click",
+      eventLbl:this.innerHTML
+
+    })
+}
+}
+if(document.getElementById("closeModal"))
+{
+  document.getElementById("closeModal").onclick = function log() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "Cookies",
+      eventAct:"click",
+      eventLbl:"X"
+
+    })
+}
+}
+if(document.getElementById("fb"))
+{
+  document.getElementById("fb").onclick = function log() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "footer",
+      eventAct:"click",
+      eventLbl:"Facebook"
+
+    })
+}
+}
+if(document.getElementById("insta"))
+{
+  document.getElementById("insta").onclick = function log() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "footer",
+      eventAct:"click",
+      eventLbl:"Instagram"
+
+    })
+}
+}
+
 if (document.getElementById("log")) {
   document.getElementById("log").onclick = function log() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "header",
+      eventAct:"click",
+      eventLbl:this.innerHTML
+
+    })
     document.getElementById("wrapper-modal").style.visibility = "visible";
   };
 }
@@ -54,6 +115,14 @@ if (document.getElementById("close")) {
 
 if (document.getElementById("reg")) {
   document.getElementById("reg").onclick = function reg() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "header",
+      eventAct:"click",
+      eventLbl:this.innerHTML
+
+    })
     document.getElementById("wrapper-modal-reg").style.visibility = "visible";
   };
 }
@@ -149,6 +218,14 @@ function loginForm(e) {
 
 if (document.getElementById("locateus")) {
   document.getElementById("locateus").onclick = function getLocation() {
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "header",
+      eventAct:"click",
+      eventLbl:this.innerHTML
+
+    })
     document.getElementById("getLoc").scrollIntoView({
       behavior: "smooth"
     });
@@ -159,7 +236,16 @@ if (document.getElementById('aboutus')) {
   
   document.getElementById('aboutus').onclick = function () {
     
+    window.dataLayer=window.dataLayer || [];
+    window.dataLayer.push({
+      event:"component_engagement",
+      eventCat : "header",
+      eventAct:"click",
+      eventLbl:this.innerHTML
+
+    })
     window.location.href = "./aboutus.html";
+
   };
 }
 
