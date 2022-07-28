@@ -50,7 +50,7 @@ button:hover{
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 40% 10% 10% 10% 10%;
+  grid-template-columns: 40% 0% 10% 0% 10% 10% 10%;
 }
 
 .wrapper__header img {
@@ -58,7 +58,7 @@ button:hover{
   width: 100px;
 }
 .wrapper__header button {
-  padding-left: 20%;
+  padding-left: 0%;
   font-size: medium;
   cursor: pointer;
   border: none;
